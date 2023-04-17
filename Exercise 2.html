@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise 2</title>
+	<style>
+		.container {
+			display: flex;
+			width: 600px;
+			height: 250px;
+			/* по центру страницы, как по вертикали так и горизонтали */
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			perspective: 1000px;
+		}
+
+		.rectangle-left {
+			width: 50%;
+			height: 100%;
+			background-color: goldenrod;
+			border: 2px solid black;
+			transition: transform 2s ease-in-out;
+			transform-origin: top left;
+		}
+
+		.container:hover .rectangle-left {
+			transform: rotateY(45deg);
+			transform-style: preserve-3d;
+		}
+
+		.rectangle-right {
+			width: 50%;
+			height: 100%;
+			background-color: coral;
+			border: 2px solid black;
+			transition: transform 2s ease-in-out;
+			transform-origin: top right;
+		}
+
+		.container:hover .rectangle-right {
+			transform: rotateY(-45deg);
+			transform-style: preserve-3d;
+		}
+
+		/* текст "Hello !" по центру контейнера, на заднем слое */
+		.container:before {
+			content: "Hello !";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 50px;
+			color: black;
+			z-index: -1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class=" rectangle-left"></div>
+		<div class=" rectangle-right"></div>
+	</div>
+</body>
+
+</html>

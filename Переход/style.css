@@ -1,0 +1,109 @@
+body {
+	width: 100%;
+	min-height: 100vh;
+	background-color: #f5f6fb;
+}
+
+/* Основные свойства для бокового меню */
+.menu {
+	display: flex;
+	/* размещаем элементы к колонку */
+	flex-direction: column;
+	width: 95px;
+	/* на всю высоту экрана */
+	min-height: 100vh;
+	/* чтобы меню было фиксированным */
+	position: fixed;
+	/* прижимаем к верхнему */
+	top: 0;
+	/* .. и нижнему краю */
+	left: 0;
+	background-color: #858185;
+	/* задаем тень, чтобы отделить от фона */
+	box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+	overflow: hidden;
+	transition-property: width;
+}
+
+.menu:hover {
+	width: 240px;
+}
+
+/* Свойства для контента */
+.content {
+	/* отступ от бокового меню 240px + 40px */
+	padding-left: 120px;
+	padding-top: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	/* текст по ширине страницы */
+	text-align: justify;
+}
+
+/* Позиционирование меню */
+.menu__header {
+	margin-top: 40px;
+	display: flex;
+	/* центрируем текст */
+	color: #f8dfb0;
+	font-size: 24px;
+	text-decoration: none;
+	font-family: "Rubik", sans-serif;
+	font-weight: bold;
+	/* расстояние между буквами */
+	/* letter-spacing: 20px; */
+	justify-content: center;
+}
+
+/* Свойства для элементов меню */
+.link {
+	position: relative;
+	/* чтобы задать потом псевдоэлемент */
+	display: flex;
+	/* чтобы элемент тянулся на всю ширину */
+	align-items: center;
+	/* по центру текст и иконка */
+	height: 45px;
+	/* высота элемента 45px */
+	text-decoration: none;
+}
+
+/* Свойства иконки внутри ссылки */
+.link>img {
+	width: 50px;
+	margin-right: 20px;
+}
+
+/* Свойства текста внутри ссылки */
+.link>span {
+	font-family: "Karla", sans-serif;
+	font-size: 20px;
+	color: #f8dfb0;
+}
+
+/* При наведении на ссылку - фон */
+.link:hover {
+	background-color: #524f52;
+}
+
+/* Выводим оранжевую линию слева */
+.link:hover:before {
+	display: flex;
+}
+
+/* Создаем оранжевую линию слева */
+.link:before {
+	content: "";
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 5px;
+	height: 100%;
+	background-color: #ffa000;
+}
+
+.menu li {
+	list-style-type: none;
+	margin-left: -15px;
+}

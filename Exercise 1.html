@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Exercise 1</title>
+
+	<style>
+		.clock {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border: 5px solid black;
+			position: relative;
+			margin: 50px auto;
+		}
+
+		.hour-hand,
+		.minute-hand,
+		.second-hand {
+			background-color: black;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform-origin: bottom center;
+		}
+
+		.hour-hand {
+			width: 8px;
+			height: 60px;
+			margin-left: -4px;
+			margin-top: -60px;
+			border-radius: 8px 8px 0 0;
+			transform: rotate(30deg);
+			animation: rotate-hour 43200s linear infinite;
+		}
+
+		.minute-hand {
+			width: 6px;
+			height: 80px;
+			margin-left: -3px;
+			margin-top: -80px;
+			border-radius: 6px 6px 0 0;
+			transform: rotate(60deg);
+			animation: rotate-minute 3600s linear infinite;
+		}
+
+		.second-hand {
+			width: 2px;
+			height: 100px;
+			margin-left: -1px;
+			margin-top: -100px;
+			border-radius: 2px 2px 0 0;
+			transform: rotate(90deg);
+			animation: rotate-second 60s linear infinite;
+		}
+
+		@keyframes rotate-hour {
+			from {
+				transform: rotate(30deg);
+			}
+
+			to {
+				transform: rotate(390deg);
+			}
+		}
+
+		@keyframes rotate-minute {
+			from {
+				transform: rotate(60deg);
+			}
+
+			to {
+				transform: rotate(420deg);
+			}
+		}
+
+		@keyframes rotate-second {
+			from {
+				transform: rotate(90deg);
+			}
+
+			to {
+				transform: rotate(450deg);
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="clock">
+		<div class="hour-hand"></div>
+		<div class="minute-hand"></div>
+		<div class="second-hand"></div>
+	</div>
+
+</body>
+
+</html>
